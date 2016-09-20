@@ -1,0 +1,8 @@
+class CfgDebriefing
+{
+  class tooManyOpfor
+  {
+    title = "Mission Failed!";
+    subtitle = "There are too many OPFOR soldiers! Try playing NATO instead."
+  }
+}
