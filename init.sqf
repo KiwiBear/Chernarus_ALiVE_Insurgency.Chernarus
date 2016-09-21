@@ -13,6 +13,6 @@ _eastCount = 0;
   };
 } forEach _justPlayers;
 
-if(_westCount / _eastCount < 5  && side player == east) then {
+if( _westCount / _eastCount < 5  && (side player == east || side player == resistance) ) then {
   ["tooManyOpfor", false, true] call BIS_fnc_endMission;
 };
