@@ -12,6 +12,7 @@ class Params
 	};
 	class Daytime
 	{
+		title = "Time of Mission Start";
 		texts[] = {"Morning","Day","Evening","Night"};
 		values[] = {6,12,18,0};
 		default = 12;
