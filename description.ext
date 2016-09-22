@@ -46,6 +46,12 @@ class CfgFunctions
 		{
 			file = "functions";
 			class opforPlayerCheck{};
+			class createObjective{};
+		};
+		class server
+		{
+			file = "functions\server";
+			class ammoCacheCreator{};
 		};
 	};
 };
