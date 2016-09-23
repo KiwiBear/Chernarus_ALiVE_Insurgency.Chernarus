@@ -1,6 +1,7 @@
 
 if(isServer) then
 {
+  waitUntil {!isNil "ALIVE_profileSystemInit"};
   [] call mongoose_fnc_ammoCacheCreator;
 }
 else

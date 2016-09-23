@@ -19,7 +19,7 @@ for "_i" from 1 to _ammoCacheCount do
 
   diag_log "Moved cache" + str _i + " to new location at x: " + str _x + ", y: " + str _y;
   // Create new ALiVE objective so that OPFOR commander can defend caches.
-  [_x, _y] call mongoose_fnc_createObjective;
+  [_x, _y, _i] call mongoose_fnc_createObjective;
 
   diag_log "Created new OPCOM objective at x: " + str _x + ", y: " + str _y;
 };
@@ -33,7 +33,7 @@ if(_ammoCacheCount < 7) then
   {
     _cache = missionNamespace getVariable ("cache" + str _i);
     deleteVehicle _cache;
-    diag_log "cache" + str _i + " removed"
+    diag_log "cache" + str _i + " removed";
   };
 };
 

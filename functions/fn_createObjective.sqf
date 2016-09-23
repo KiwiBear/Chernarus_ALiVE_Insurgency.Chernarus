@@ -5,7 +5,7 @@
 
 */
 
-params["_xcoord", "_ycoord"];
+params["_xcoord", "_ycoord","_i"];
 /*
 Parameters:
 
@@ -19,6 +19,6 @@ select 4: _priority (Integer);
 if (isServer) then
 {
   {
-    [_x, "addObjective", ["OPCOM_custom_1", [_xcoord, _ycoord, 0], 100, "CIV", 200] ] call ALiVE_fnc_OPCOM;
-  } foreach OPCOM_INSTANCES
+    [_x, "addObjective", ["OPCOM_custom_" + str _i, [_xcoord, _ycoord, 0], 100, "CIV", 200] ] call ALiVE_fnc_OPCOM;
+  } foreach OPCOM_INSTANCES;
 };
