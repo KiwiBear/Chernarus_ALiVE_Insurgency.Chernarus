@@ -1,3 +1,4 @@
+//waitUntil {!isNil "ALIVE_profileSystemInit"};
 
 if(isServer) then
 {
