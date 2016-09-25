@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12070.691,181.3279,12652.128};
-		dir[]={0.96550626,-0.24766353,0.081852995};
-		up[]={0.24685384,0.9688127,0.020928562};
-		aside[]={0.08448755,1.3226745e-006,-0.99654293};
+		pos[]={12125.39,191.23111,12632.39};
+		dir[]={-0.2732653,-0.42641467,0.86240202};
+		up[]={-0.12881912,0.90449107,0.4065389};
+		aside[]={0.95339984,7.6941797e-007,0.30210212};
 	};
 };
 binarizationWanted=0;
@@ -7332,7 +7332,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[-20, ""CUP_B_US_Army""] remoteExecCall [""server_fnc_adjustLogisticsPool"", 2, true]";
+							value="[-20, ""CUP_B_US_Army""] remoteExecCall [""server_fnc_adjustLogisticsPool"", 2, false]";
 						};
 					};
 				};
@@ -10893,7 +10893,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="500";
+							value="1000";
 						};
 					};
 				};

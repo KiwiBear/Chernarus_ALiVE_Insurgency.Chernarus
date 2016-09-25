@@ -5,20 +5,17 @@
 
 */
 
-params["_xcoord", "_ycoord","_i"];
-/*
-Parameters:
-
-select 0: _id (String);
-select 1: _position (Array);
-select 2: _size (Integer);
-select 3: _type (String of "MIL" or "CIV");
-select 4: _priority (Integer);
-*/
-
-if (isServer) then
+private["_objectiveParams","_factions","_faction","_opcom","_opcomSide"];
+_objectiveParams = _this select 0;
+_factions = _this select 1;
 {
-  {
-    [_x, "addObjective", ["OPCOM_custom_" + str _i, [_xcoord, _ycoord, 0], 100, "CIV", 200] ] call ALiVE_fnc_OPCOM;
-  } foreach OPCOM_INSTANCES;
-};
+	_opcom = _x;
+	{
+		_faction = _x;
+		_opcomSide = [_opcom,"side",""] call ALiVE_fnc_HashGet;
+
+		if( _opcomSide == _faction) then {
+			[_opcom, "addObjective", _objectiveParams] call ALiVE_fnc_OPCOM;
+		};
+	} forEach _factions;
+} forEach OPCOM_INSTANCES;

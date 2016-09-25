@@ -33,7 +33,7 @@ class CfgDebriefing
   class tooManyOpfor
   {
     title = "Mission Failed!";
-    subtitle = "There are too many OPFOR soldiers! Try playing NATO instead."
+    subtitle = "There are too many OPFOR soldiers!";
   }
 }
 
@@ -49,12 +49,11 @@ class CfgFunctions
 			class createObjective{};
 			class prepareDrone{};
 		};
+
 		class server
 		{
 			file = "functions\server";
 			class ammoCacheCreator{};
-			class adjustLogisticsPool{};
-			class requestDrone{};
 		};
 	};
 };
@@ -71,11 +70,11 @@ class CfgRemoteExec
 			// State of remoteExec: 0-turned off, 1-turned on, taking whitelist into account, 2-turned on, however, ignoring whitelists (default because of backward compatibility)
       mode = 2;
       // Ability to send jip messages: 0-disabled, 1-enabled (default)
-      jip = 1;
+      jip = 0;
 
-			class ammoCacheCreator{allowedTargets=2};
-			class adjustLogisticsPool{allowedTargets=2};
-			class requestDrone{allowedTargets=2};
+			class adjustLogisticsPool{allowedTargets=2;};
+			class requestDrone{allowedTargets=2;};
+			class getLogisticsPool{allowedTargets=2;};
     };
 	};
 };

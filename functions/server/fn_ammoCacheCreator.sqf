@@ -2,8 +2,9 @@
   Name: fn_ammoCacheCreator.sqf
   Author: Lordmungus
   Description: Spawns ammo caches in the beginning of the mission.
-
 */
+
+waitUntil {sleep 1; !isNil "ALIVE_profileSystemInit"};
 
 _ammoCacheCount = "AmmoCacheCount" call BIS_fnc_getParamValue;
 
@@ -17,14 +18,16 @@ for "_i" from 1 to _ammoCacheCount do
   _cache setPosATL [_x, _y, 0];
   caches pushBack _cache;
 
-  diag_log "Moved cache" + str _i + " to new location at x: " + str _x + ", y: " + str _y;
-  // Create new ALiVE objective so that OPFOR commander can defend caches.
-  [_x, _y, _i] call mongoose_fnc_createObjective;
+  diag_log format["Moved cache no. %1 to new location at x: %2, y: %3", _i, _x, _y];
 
-  diag_log "Created new OPCOM objective at x: " + str _x + ", y: " + str _y;
+  // Create new ALiVE objective so that OPFOR commander can defend caches.
+
+  [["obj_" + str _i, [_x, _y, 0], 100,"CIV"],["EAST"]] call mongoose_fnc_createObjective;
+
+  diag_log format["Created new OPCOM objective at x: %1, y: %2", _x, _y];
 };
 
-publicVariable "caches";
+missionNamespace setVariable ["caches", caches, true];
 
 // Delete remaining caches
 if(_ammoCacheCount < 7) then
@@ -33,21 +36,6 @@ if(_ammoCacheCount < 7) then
   {
     _cache = missionNamespace getVariable ("cache" + str _i);
     deleteVehicle _cache;
-    diag_log "cache" + str _i + " removed";
+    diag_log format["Cache no. %1 removed", _i];
   };
 };
-
-
-
-/*
-missionNamespace setVariable ["caches", caches, true];
-diag_log "caches sent to missionNamespace";
-*/
-// Position debug
-/*
-_justPlayers = allPlayers - entities "HeadlessClient_F";
-
-waitUntil {_justPlayers != 0};
-
-(_justPlayers select 0) setPosATL getPosATL (caches select 0);
-*/

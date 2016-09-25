@@ -1,0 +1,3 @@
+missionNamespace setVariable["GlobalForcePoolVariable", [ALIVE_globalForcePool, "CUP_B_US_Army"] call ALIVE_fnc_hashGet, true];
+
+hint format["%1", missionNamespace getVariable "GlobalForcePoolVariable"];

@@ -6,12 +6,8 @@
 
 params["_quantity", "_faction"];
 
-if(isServer) then {
-
-	      // example: get the global force pool count
-        // _currentBLUFORForcepool = [ALIVE_globalForcePool, _faction] call ALIVE_fnc_hashGet;
-
-        // example: alter the current force pool
-        [ALIVE_globalForcePool, _faction, _quantity] call ALIVE_fnc_hashSet;
-
+if(isServer) then
+{
+  [ALIVE_globalForcePool, _faction, _quantity] call ALIVE_fnc_hashSet;
+  diag_log format["Logistics pool of %1 altered by %2.", _faction, _quantity];
 };
