@@ -1,5 +1,5 @@
 /*
-  Name: fn_opforPlayerCheck.sqf
+  Name: opforPlayerCheck.sqf
   Author: lordmungus
   Description: Checks whether opfor players are respecting mission parameters.
 */

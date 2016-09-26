@@ -15,10 +15,10 @@ if(typeOf _caller == "CUP_B_US_Officer") then
 	// Request logistics pool count for CUP_B_US_Army and "public variable" the result
 
 	["CUP_B_US_Army"] remoteExec ["server_fnc_getLogisticsPool", 2, false];
-	sleep 0.1; //Waiting for server to update the pool 
+	sleep 0.1; //Waiting for server to update the pool
 	_currentBLUFORForcepool = missionNamespace getVariable ["GlobalForcePoolVariable",-99999];
 
-	if (_currentBLUFORForcepool != -99999) then {	
+	if (_currentBLUFORForcepool != -99999) then {
 		if(_currentBLUFORForcepool > 500) then
 		{
 			remoteExec ["server_fnc_requestDrone", 2, false];
@@ -26,11 +26,11 @@ if(typeOf _caller == "CUP_B_US_Officer") then
 		}
 		else
 		{
-			hint "NATO forcepool is under 500. Complete more sidetasks!";
+			exitWith { hint "NATO forcepool is under 500. Complete more sidetasks!" };
 		};
 	}
 	else
 	{
-		systemChat "ERROR! variable is not set";
+		systemChat "ERROR! variable is not set. Check back later once all ALiVE modules are loaded.";
 	};
 };

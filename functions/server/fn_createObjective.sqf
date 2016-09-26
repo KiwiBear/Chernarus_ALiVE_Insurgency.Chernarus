@@ -6,6 +6,7 @@
 */
 
 private["_objectiveParams","_factions","_faction","_opcom","_opcomSide"];
+
 _objectiveParams = _this select 0;
 _factions = _this select 1;
 {

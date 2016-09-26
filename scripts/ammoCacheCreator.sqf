@@ -1,10 +1,10 @@
 /*
-  Name: fn_ammoCacheCreator.sqf
+  Name: ammoCacheCreator.sqf
   Author: Lordmungus
   Description: Spawns ammo caches in the beginning of the mission.
 */
 
-waitUntil {sleep 1; !isNil "ALIVE_profileSystemInit"};
+waitUntil { sleep 1; !isNil "OPCOM_INSTANCES"; };
 
 _ammoCacheCount = "AmmoCacheCount" call BIS_fnc_getParamValue;
 
