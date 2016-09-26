@@ -3,10 +3,10 @@
   Author: Lordmungus
   Description: Spawns drone on NATO side. Derived from KKblog's uav camera script.
 */
-
+diag_log "Function called";
 if(isServer) then
 {
-
+diag_log "UAV should be spawned";
   _uav = createVehicle ["B_UAV_02_F", [12301, 13196, 500], [], 0, "FLY"];
   createVehicleCrew _uav;
   _uav flyInHeight 500;
