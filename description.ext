@@ -54,32 +54,37 @@ class CfgFunctions
 			file = "functions";
 			class prepareDrone{};
 		};
+	};
 
-		class server
+	class server
+	{
+		tag = "server";
+		file = "functions\server";
+		class Sfuncs
 		{
-			file = "functions\server";
 			class createObjective{};
+			class adjustLogisticsPool{};
+			class requestDrone{};
+			class getLogisticsPool{};
 		};
 	};
+	
 };
 
 class CfgRemoteExec
 {
-	class server
-	{
-		tag = "server";
-		// List of script functions allowed to be sent from client via remoteExec
-		class Functions
+	class Functions
     {
-			file = "functions\server";
-			// State of remoteExec: 0-turned off, 1-turned on, taking whitelist into account, 2-turned on, however, ignoring whitelists (default because of backward compatibility)
-      mode = 2;
-      // Ability to send jip messages: 0-disabled, 1-enabled (default)
-      jip = 0;
+		// State of remoteExec: 0-turned off, 1-turned on, taking whitelist into account, 2-turned on, however, ignoring whitelists (default because of backward compatibility)
+		mode = 2;
+		// Ability to send jip messages: 0-disabled, 1-enabled (default)
+		jip = 0;
 
-			class adjustLogisticsPool{allowedTargets=2;};
-			class requestDrone{allowedTargets=2;};
-			class getLogisticsPool{allowedTargets=2;};
+		class server_fnc_adjustLogisticsPool{allowedTargets=0;};
+		class server_fnc_requestDrone{allowedTargets=0;};
+		class server_fnc_getLogisticsPool{allowedTargets=0;};
+		
+		
     };
-	};
+	
 };
