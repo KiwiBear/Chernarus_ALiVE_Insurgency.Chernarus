@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12016.202,253.54684,12622.076};
-		dir[]={0.79049224,-0.59018838,0.16444007};
-		up[]={0.57782984,0.80723637,0.12020243};
-		aside[]={0.20368902,2.9840157e-007,-0.97915405};
+		pos[]={12066.923,180.01331,12659.518};
+		dir[]={-0.85478252,-0.38721168,0.3459118};
+		up[]={-0.35898629,0.92194724,0.14527252};
+		aside[]={0.37516627,1.1146185e-006,0.92708206};
 	};
 };
 binarizationWanted=0;
@@ -326,7 +326,7 @@ class ScenarioData
 	disabledAI=1;
 	joinUnassigned=0;
 	respawn=3;
-	respawnDelay=15.751302;
+	respawnDelay=5.3540215;
 	class Header
 	{
 		gameType="CTI";
@@ -4008,7 +4008,7 @@ class Mission
 			type="rectangle";
 			a=1500;
 			b=1300;
-			angle=200.41498;
+			angle=200.41495;
 			id=39;
 			atlOffset=1.1255652e+021;
 		};

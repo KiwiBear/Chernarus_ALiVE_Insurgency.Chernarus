@@ -6,8 +6,5 @@
 
 params["_quantity", "_faction"];
 
-if(isServer) then
-{
-  [ALIVE_globalForcePool, _faction, _quantity] call ALIVE_fnc_hashSet;
-  diag_log format["Logistics pool of %1 altered by %2.", _faction, _quantity];
-};
+[ALIVE_globalForcePool, _faction, _quantity] call ALIVE_fnc_hashSet;
+diag_log format["Logistics pool of %1 altered by %2.", _faction, _quantity];
