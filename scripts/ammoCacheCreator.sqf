@@ -22,7 +22,7 @@ for "_i" from 1 to _ammoCacheCount do
 
   // Create new ALiVE objective so that OPFOR commander can defend caches.
 
-  [["obj_" + str _i, [_x, _y, 0], 100,"CIV"],["EAST"]] call mongoose_fnc_createObjective;
+  [["obj_" + str _i, [_x, _y, 0], 100,"CIV"],["EAST"]] call server_fnc_createObjective;
 
   diag_log format["Created new OPCOM objective at x: %1, y: %2", _x, _y];
 };
