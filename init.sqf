@@ -1,4 +1,7 @@
 
+
+missionNamespace setVariable ["markerIndex",0,true];
+
 if(isServer) then
 {
   // Distribute caches across the map.
