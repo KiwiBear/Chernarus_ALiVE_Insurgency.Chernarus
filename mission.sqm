@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12030.841,169.11232,12690.61};
-		dir[]={-0.43848994,-0.61419111,0.65618318};
-		up[]={-0.34125295,0.78914607,0.51067162};
-		aside[]={0.83147323,-6.9855014e-007,0.55562848};
+		pos[]={12205.06,230.97745,12653.727};
+		dir[]={-0.90487701,-0.30547586,-0.29665026};
+		up[]={-0.29034209,0.95217729,-0.095182464};
+		aside[]={-0.31153795,-7.4846321e-007,0.95029622};
 	};
 };
 binarizationWanted=0;
@@ -350,24 +350,6 @@ class CustomAttributes
 						type[]=
 						{
 							"ARRAY"
-						};
-					};
-					class value
-					{
-						items=1;
-						class Item0
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="MenuPosition";
-							};
 						};
 					};
 				};
@@ -7003,7 +6985,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={12088.947,158.93788,12694.658};
+				position[]={12085.119,158.89999,12706.662};
 			};
 			id=188;
 			type="ModuleRespawnVehicle_F";
@@ -7043,7 +7025,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[-20, ""BLU_F""] remoteExecCall [""server_fnc_adjustLogisticsPool"", 2, false]";
+							value="[-20, ""CUP_B_US_Army""] remoteExec [""server_fnc_adjustLogisticsPool"", 2, false]";
 						};
 					};
 				};
@@ -12967,7 +12949,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this addAction[""<t size='2'>Deploy cache-hunting UAV</t>"",""call mongoose_fnc_prepareDrone""];";
+				init="this addAction[""Deploy cache-hunting UAV"",""call mongoose_fnc_prepareDrone""];";
 			};
 			id=334;
 			type="RU_WarfareBUAVterminal";

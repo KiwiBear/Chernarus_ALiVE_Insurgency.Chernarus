@@ -5,7 +5,7 @@ missionNamespace setVariable ["markerIndex",0,true];
 if(isServer) then
 {
   // Distribute caches across the map.
-  _null = [] execVM "scripts\ammoCacheCreator.sqf";
+  _null = [] execVM "scripts\initAmmoCaches.sqf";
 }
 else
 {

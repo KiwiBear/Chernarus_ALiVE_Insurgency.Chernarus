@@ -8,6 +8,9 @@ private ["_cam","_camx","_camy","_camz","_object"];
 titleText ["Central Operations Network presents...", "BLACK IN",9999];
 
 waituntil {!(isnull player)};
+
+playMusic	"LeadTrack01a_F_EXP";
+
 sleep 2;
 
 _object = player;
@@ -27,7 +30,7 @@ sleep 5;
 
 titleText [" C H E R N A R U S   I N S U R G E N C Y   |   A L i V E ", "BLACK IN",25];
 
-sleep 10;
+sleep 15;
 
 _cam CameraEffect ["Terminate","Back"];
 CamDestroy _cam;
