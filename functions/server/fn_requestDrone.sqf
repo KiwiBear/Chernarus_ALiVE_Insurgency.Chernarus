@@ -10,9 +10,9 @@ if(isServer) then
 {
 	diag_log "UAV should be spawned";
 	_uav = createVehicle ["B_UAV_02_F", [12301, 13196, 500], [], 0, "FLY"];
-	_uav = setdir 180;
 	createVehicleCrew _uav;
 	_uav flyInHeight 500;
+	//_uav setDir 180;
 
 	_wp = group _uav addWaypoint [[12068, 12700, 500], 0];
 	_wp setWaypointType "LOITER";
@@ -21,7 +21,7 @@ if(isServer) then
 	
 	_uav setVariable ["Active",true,true]; //Tell the cache finder thats its ok to run
 	
-	_cachefinder = [_uav] spawn "server_fnc_uavCacheFinder";
+	_cachefinder = [_uav] spawn server_fnc_uavCacheFinder;
 	sleep 60;
 	_uav setVariable ["Active",false,true]; //Tells the cache finder to stop trying to find a cache
 	

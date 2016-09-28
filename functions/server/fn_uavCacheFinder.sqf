@@ -22,7 +22,7 @@ while{_drone getVariable "Active" && alive _drone} do {
 		
 		//Lets create the marker
 		_Mname = format["cacheMarker%1",_markerindex];
-		_marker = createMarker [_Mname,[((((random (_distance / 2)) + (_distance / 2)) - (_distance / 2)) * 2) * (if(floor random 2 == 0) then { -1 } else { 1 }) + (position _cache select 0), ((((random (_distance / 2)) + (_distance / 2)) - (_distance / 2)) * 2) * (if(floor random 2 == 0) then { -1 } else { 1 }) + (position _cache select 1)]];
+		_marker = createMarker [_Mname,[((((random (_distance / 2)) + (_distance / 2)) - (_distance / 2)) * 2) * (if(floor random 2 == 0) then { -1 } else { 1 }) + (position _box select 0), ((((random (_distance / 2)) + (_distance / 2)) - (_distance / 2)) * 2) * (if(floor random 2 == 0) then { -1 } else { 1 }) + (position _box select 1)]];
 		missionNamespace setVariable ["markerIndex",(_markerindex + 1),true];
 		_marker setMarkerType "hd_unknown";
 		_marker setMarkerColor "ColorRed";

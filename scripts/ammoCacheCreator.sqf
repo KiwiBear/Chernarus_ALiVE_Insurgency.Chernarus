@@ -16,7 +16,7 @@ for "_i" from 1 to _ammoCacheCount do
   _y = (random 7000) + 4300;
   _cache = missionNamespace getVariable ("cache" + str _i);
   _cache setPosATL [_x, _y, 0];
-  _chache setVariable ["Markers",[],true];
+  _cache setVariable ["Markers",[],true];
   caches pushBack _cache;
 
   diag_log format["Moved cache no. %1 to new location at x: %2, y: %3", _i, _x, _y];
