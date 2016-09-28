@@ -66,6 +66,7 @@ class CfgFunctions
 			class adjustLogisticsPool{};
 			class requestDrone{};
 			class getLogisticsPool{};
+			class uavCacheFinder{};
 		};
 	};
 	
@@ -83,6 +84,7 @@ class CfgRemoteExec
 		class server_fnc_adjustLogisticsPool{allowedTargets=0;};
 		class server_fnc_requestDrone{allowedTargets=0;};
 		class server_fnc_getLogisticsPool{allowedTargets=0;};
+		class server_fnc_uavCacheFinder{allowedTargets=0;};
 		
 		
     };
