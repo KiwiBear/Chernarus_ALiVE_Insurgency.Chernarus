@@ -35,6 +35,9 @@ for "_i" from 1 to _ammoCacheCount do
   _cache setPosATL [_x, _y, 0];
   _cache setVariable ["Markers",[],true];
   caches pushBack _cache;
+  
+  _cache addEventHandler ["HandleDamage",{_this call server_fnc_destroyCache}];
+  
 
   diag_log format["Moved cache no. %1 to new location at x: %2, y: %3", _i, _x, _y];
 
