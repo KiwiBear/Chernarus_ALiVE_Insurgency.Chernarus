@@ -36,6 +36,7 @@ while{_drone getVariable "Active" && alive _drone} do {
 		_array pushBack _Mname;
 		_box setVariable ["Markers",_array,true];
 		_numMarkers = _numMarkers + 1;
+		[_Mname] remoteExec ["mongoose_fnc_deleteMarker", east];
 		
 	};
 	sleep 10;
