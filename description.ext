@@ -45,14 +45,14 @@ class CfgDebriefing
 	class WestWin
 	{
 		title = "Mission accomplished";
-		subtitle = "You successfully destoryed all ammo caches.";
-		description = "You successfully destoryed all ammo caches.";
+		subtitle = "You successfully destroyed all ammo caches.";
+		description = "You successfully destroyed all ammo caches.";
 	};
 	class EastLoose
 	{
 		title = "Mission failed";
-		subtitle = "You failed to stop the western scum from destorying our ammo caches!";
-		description = "You failed to stop the western scum from destorying our ammo caches!";
+		subtitle = "You failed to stop the western scum!";
+		description = "You failed to stop the western scum from destroying our ammo caches!";
 	};
 };
 
@@ -102,7 +102,7 @@ class CfgRemoteExec
 		class server_fnc_uavCacheFinder{allowedTargets=0;};
 		class server_fnc_CheckEndMission{allowedTargets=0;};
 		class server_fnc_destroyCache{allowedTargers=0;};
-		
+
 
     };
 
