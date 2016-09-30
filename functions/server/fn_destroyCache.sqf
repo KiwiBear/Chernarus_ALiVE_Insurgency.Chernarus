@@ -6,11 +6,14 @@
 */
 
 params ["_event"];
+//systemchat "EH Fired";
+diag_log "EH Fired";
 if(isServer) then {
 	_box = _event select 0;
 	_source = _event select 4;
 
-	if(_source in ["SatchelCharge_Remote_Ammo", "SatchelCharge_Remote_Ammo_Scripted", "DemoCharge_Remote_Ammo_Scripted"]) then {
+	systemchat format["%1",_source];
+	if( _source in ["SatchelCharge_Remote_Ammo", "SatchelCharge_Remote_Ammo_Scripted", "DemoCharge_Remote_Ammo_Scripted"]) then {
 
 		//Remove distance markers
 		{
@@ -20,7 +23,10 @@ if(isServer) then {
 
 		//Remove cache from list of caches
 		_caches = missionNamespace getVariable "caches";
+
+
 		_caches set [_caches find _box, -1];
+		_caches = _caches - [-1];
 		missionNamespace setVariable ["caches", _caches, true];
 
 		_bomb = "Bo_GBU12_LGB" createVehicle getpos _box;
@@ -28,10 +34,12 @@ if(isServer) then {
 		_bomb setVelocity [0,0,-10];
 
 		deleteVehicle _box;
-		[["CacheDestroyed",["Well done! A OPFOR weapons cache was destroyed!"]]] remoteExec [BIS_fnc_showNotification,West];
-		[["CacheDestroyed",["A weapons cache has been destroyed. Stop them now!"]]] remoteExec [BIS_fnc_showNotification,East];
+		["CacheDestroyed",["Well done! A OPFOR weapons cache was destroyed!"]] remoteExec ["BIS_fnc_showNotification",West];
+		["CacheDestroyed",["A weapons cache has been destroyed. Stop them now!"]] remoteExec ["BIS_fnc_showNotification",East];
 		[] call server_fnc_CheckEndMission;
 
 
+	} else {
+		_box setDamage 0;
 	};
 };

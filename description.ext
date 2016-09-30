@@ -81,6 +81,7 @@ class CfgFunctions
 			class getLogisticsPool{};
 			class uavCacheFinder{};
 			class CheckEndMission{};
+			class destroyCache{};
 		};
 	};
 
@@ -100,7 +101,8 @@ class CfgRemoteExec
 		class server_fnc_getLogisticsPool{allowedTargets=0;};
 		class server_fnc_uavCacheFinder{allowedTargets=0;};
 		class server_fnc_CheckEndMission{allowedTargets=0;};
-
+		class server_fnc_destroyCache{allowedTargers=0;};
+		
 
     };
 

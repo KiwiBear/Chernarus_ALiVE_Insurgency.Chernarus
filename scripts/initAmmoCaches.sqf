@@ -34,14 +34,15 @@ for "_i" from 1 to _ammoCacheCount do
   _cache = missionNamespace getVariable ("cache" + str _i);
   _cache setPosATL [_x, _y, 0];
   _cache setVariable ["Markers",[],true];
+  clearMagazineCargo _cache;
+  clearWeaponCargo _cache;
   caches pushBack _cache;
-  
-  _cache addEventHandler ["HandleDamage",{_this call server_fnc_destroyCache}];
-  
 
+  //_cache addMPEventHandler ["MPHit",{[_this] call server_fnc_destroyCache;}];
+  _cache addEventHandler ["HandleDamage",{[_this] call server_fnc_destroyCache;}];
   diag_log format["Moved cache no. %1 to new location at x: %2, y: %3", _i, _x, _y];
 
-  // Create new ALiVE objective so that OPFOR commander can defend caches.
+
 
   [["obj_" + str _i, [_x, _y, 0], 100,"CIV"],["EAST"]] call server_fnc_createObjective;
 
@@ -50,7 +51,6 @@ for "_i" from 1 to _ammoCacheCount do
 
 missionNamespace setVariable ["caches", caches, true];
 
-// Delete remaining caches
 if(_ammoCacheCount < 7) then
 {
   for "_i" from (_ammoCacheCount + 1) to 7 do
