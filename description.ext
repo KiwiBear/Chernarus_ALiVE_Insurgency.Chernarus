@@ -32,7 +32,7 @@ class Params
 		texts[] = {"No","Yes"};
 		values[] = {0,1};
 		default = 0;
-	}
+	};
 };
 
 class CfgDebriefing
@@ -41,8 +41,14 @@ class CfgDebriefing
   {
     title = "Mission Failed!";
     subtitle = "There are too many OPFOR soldiers!";
-  }
-}
+  };
+	class WestWin
+	{
+		title = "Mission accomplished";
+		subtitle = "You successfully destoryed all ammo caches.";
+		description = "You successfully destoryed all ammo caches.";
+	};
+};
 
 class CfgFunctions
 {
@@ -68,9 +74,10 @@ class CfgFunctions
 			class requestDrone{};
 			class getLogisticsPool{};
 			class uavCacheFinder{};
+			class CheckEndMission{};
 		};
 	};
-	
+
 };
 
 class CfgRemoteExec
@@ -86,10 +93,11 @@ class CfgRemoteExec
 		class server_fnc_requestDrone{allowedTargets=0;};
 		class server_fnc_getLogisticsPool{allowedTargets=0;};
 		class server_fnc_uavCacheFinder{allowedTargets=0;};
-		
-		
+		class server_fnc_CheckEndMission{allowedTargets=0;};
+
+
     };
-	
+
 };
 
 class CfgNotifications
@@ -103,5 +111,3 @@ class CfgNotifications
 		priority = 5;
 	};
 };
-
-
