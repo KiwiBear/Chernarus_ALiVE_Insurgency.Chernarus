@@ -6,8 +6,8 @@
 
 params["_quantity", "_faction"];
 
-if(isServer) then
-{
-  [ALIVE_globalForcePool, _faction, _quantity] call ALIVE_fnc_hashSet;
-  diag_log format["Logistics pool of %1 altered by %2.", _faction, _quantity];
-};
+[ALIVE_globalForcePool, _faction, _quantity] call ALIVE_fnc_hashSet;
+// Log changes to different mediums
+_message = format["Logistics pool altered by %1.", _quantity];
+_message remoteExec ["systemchat", west];
+diag_log _message;

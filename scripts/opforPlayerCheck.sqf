@@ -23,6 +23,6 @@ _opforPlayerConstraint = "OpforPlayerConstraint" call BIS_fnc_getParamValue;
 
 if(_opforPlayerConstraint != 0) then {
   if( _westCount / _eastCount < _opforPlayerConstraint  && (side player == east) ) then {
-    ["tooManyOpfor", false, true] call BIS_fnc_endMission;
+    ["TooManyOpfor", false, true] call BIS_fnc_endMission;
   };
 };

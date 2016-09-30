@@ -6,9 +6,6 @@
 
 params["_faction","_pool"];
 
-if (isServer) then
-{
-	_pool = [ALIVE_globalForcePool, _faction] call ALIVE_fnc_hashGet;
-	missionNamespace setVariable["GlobalForcePoolVariable", _pool , true];
-	diag_log format["Logistics pool of %1 read.", _faction];
-};
+_pool = [ALIVE_globalForcePool, _faction] call ALIVE_fnc_hashGet;
+missionNamespace setVariable["GlobalForcePoolVariable", _pool, true];
+diag_log format["Logistics pool of %1 read.", _faction];

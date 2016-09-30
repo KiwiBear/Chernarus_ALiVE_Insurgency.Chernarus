@@ -1,4 +1,4 @@
-
+showSquadRadar = 1;
 
 class Params
 {
@@ -32,54 +32,90 @@ class Params
 		texts[] = {"No","Yes"};
 		values[] = {0,1};
 		default = 0;
-	}
+	};
 };
 
 class CfgDebriefing
 {
-  class tooManyOpfor
+  class TooManyOpfor
   {
     title = "Mission Failed!";
     subtitle = "There are too many OPFOR soldiers!";
-  }
-}
+  };
+	class WestWin
+	{
+		title = "Mission accomplished";
+		subtitle = "All ammo caches destroyed!";
+		description = "NATO has successfully destroyed all OPFOR ammo caches.";
+	};
+	class EastLose
+	{
+		title = "Mission failed";
+		subtitle = "The insurgency has failed!";
+		description = "You failed to stop the western scum from destroying our ammo caches!";
+	};
+};
 
 class CfgFunctions
 {
-	class mongoose
+	class Mongoose
 	{
 		tag = "mongoose";
-		class functions
+		class Functions
 		{
 			file = "functions";
 			class prepareDrone{};
-		};
-
-		class server
-		{
-			file = "functions\server";
-			class createObjective{};
+			class deleteMarker{};
 		};
 	};
+
+	class Server
+	{
+		tag = "server";
+		file = "functions\server";
+		class Sfuncs
+		{
+			class createObjective{};
+			class adjustLogisticsPool{};
+			class requestDrone{};
+			class getLogisticsPool{};
+			class uavCacheFinder{};
+			class checkEndMission{};
+			class destroyCache{};
+		};
+	};
+
 };
 
 class CfgRemoteExec
 {
-	class server
-	{
-		tag = "server";
-		// List of script functions allowed to be sent from client via remoteExec
-		class Functions
+	class Functions
     {
-			file = "functions\server";
-			// State of remoteExec: 0-turned off, 1-turned on, taking whitelist into account, 2-turned on, however, ignoring whitelists (default because of backward compatibility)
-      mode = 2;
-      // Ability to send jip messages: 0-disabled, 1-enabled (default)
-      jip = 0;
+		// State of remoteExec: 0-turned off, 1-turned on, taking whitelist into account, 2-turned on, however, ignoring whitelists (default because of backward compatibility)
+		mode = 2;
+		// Ability to send jip messages: 0-disabled, 1-enabled (default)
+		jip = 0;
 
-			class adjustLogisticsPool{allowedTargets=2;};
-			class requestDrone{allowedTargets=2;};
-			class getLogisticsPool{allowedTargets=2;};
+		class server_fnc_adjustLogisticsPool{allowedTargets=0;};
+		class server_fnc_requestDrone{allowedTargets=0;};
+		class server_fnc_getLogisticsPool{allowedTargets=0;};
+		class server_fnc_uavCacheFinder{allowedTargets=0;};
+		class server_fnc_CheckEndMission{allowedTargets=0;};
+		class server_fnc_destroyCache{allowedTargers=0;};
+
+
     };
+
+};
+
+class CfgNotifications
+{
+	class CacheDestroyed
+	{
+		title = "Cache Destroyed";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		duration = 7;
+		priority = 5;
 	};
 };
