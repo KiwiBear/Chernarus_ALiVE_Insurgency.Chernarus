@@ -9,6 +9,7 @@ if (isServer) then {
   _caches = missionNamespace getVariable "caches";
   If (count _caches = 0) then {
     //BLURFOR won
-    "WestWin" call BIS_fnc_endMission; //Need to change this to removedExec to all west players
+    ["WestWin"] remoteExec ["BIS_fnc_endMission", West];
+    ["EaseLoose"] remoteExec ["BIS_fnc_endMission", East];
   };
 };

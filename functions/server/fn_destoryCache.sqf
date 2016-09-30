@@ -28,7 +28,8 @@ if(isServer) then {
 		_bomb setVelocity [0,0,-10];
 
 		deleteVehicle _box;
-		["CacheDestroyed",["Well done! A OPFOR weapons cache was destroyed!"]] call BIS_fnc_showNotification; //Need to change this to RemoteExec
+		[["CacheDestroyed",["Well done! A OPFOR weapons cache was destroyed!"]]] remoteExec [BIS_fnc_showNotification,West];
+		[["CacheDestroyed",["A weapons cache has been destroyed. Stop them now!"]]] remoteExec [BIS_fnc_showNotification,East];
 		[] call server_fnc_CheckEndMission;
 
 

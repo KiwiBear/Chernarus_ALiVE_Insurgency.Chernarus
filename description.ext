@@ -48,6 +48,12 @@ class CfgDebriefing
 		subtitle = "You successfully destoryed all ammo caches.";
 		description = "You successfully destoryed all ammo caches.";
 	};
+	class EastLoose
+	{
+		title = "Mission failed";
+		subtitle = "You failed to stop the western scum from destorying our ammo caches!";
+		description = "You failed to stop the western scum from destorying our ammo caches!";
+	};
 };
 
 class CfgFunctions
