@@ -37,7 +37,7 @@ class Params
 
 class CfgDebriefing
 {
-  class tooManyOpfor
+  class TooManyOpfor
   {
     title = "Mission Failed!";
     subtitle = "There are too many OPFOR soldiers!";
@@ -45,23 +45,23 @@ class CfgDebriefing
 	class WestWin
 	{
 		title = "Mission accomplished";
-		subtitle = "You successfully destroyed all ammo caches.";
-		description = "You successfully destroyed all ammo caches.";
+		subtitle = "All ammo caches destroyed!";
+		description = "NATO has successfully destroyed all OPFOR ammo caches.";
 	};
-	class EastLoose
+	class EastLose
 	{
 		title = "Mission failed";
-		subtitle = "You failed to stop the western scum!";
+		subtitle = "The insurgency has failed!";
 		description = "You failed to stop the western scum from destroying our ammo caches!";
 	};
 };
 
 class CfgFunctions
 {
-	class mongoose
+	class Mongoose
 	{
 		tag = "mongoose";
-		class functions
+		class Functions
 		{
 			file = "functions";
 			class prepareDrone{};
@@ -69,7 +69,7 @@ class CfgFunctions
 		};
 	};
 
-	class server
+	class Server
 	{
 		tag = "server";
 		file = "functions\server";
@@ -80,7 +80,7 @@ class CfgFunctions
 			class requestDrone{};
 			class getLogisticsPool{};
 			class uavCacheFinder{};
-			class CheckEndMission{};
+			class checkEndMission{};
 			class destroyCache{};
 		};
 	};

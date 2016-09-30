@@ -4,7 +4,7 @@
   Description: Spawns drone on NATO side. Derived from KKblog's uav camera script.
 */
 
-diag_log "Function called";
+diag_log "fn_requestDrone called";
 
 if(isServer) then
 {
@@ -25,7 +25,7 @@ if(isServer) then
 	sleep 60;
 	_uav setVariable ["Active",false,true]; //Tells the cache finder to stop trying to find a cache
 
-	//drone flys away
+	//drone flies away
 
 	_wp = group _uav addWaypoint [[14777, 15564, 500], 0];
 	_wp setWaypointType "LOITER";

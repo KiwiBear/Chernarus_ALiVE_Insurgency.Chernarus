@@ -10,6 +10,6 @@ if (isServer) then {
   If (count _caches == 0) then {
     //BLURFOR won
     ["WestWin"] remoteExec ["BIS_fnc_endMission", West];
-    ["EastLoose"] remoteExec ["BIS_fnc_endMission", East];
+    ["EastLose"] remoteExec ["BIS_fnc_endMission", East];
   };
 };
