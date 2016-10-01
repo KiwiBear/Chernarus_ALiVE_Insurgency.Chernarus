@@ -24,12 +24,12 @@ if(typeOf _caller == "CUP_B_US_Officer") then
 		if(_currentBLUFORForcepool > 500) then
 		{
 			remoteExec ["server_fnc_requestDrone", 2, false];
-			[-500, "CUP_B_US_Army"] remoteExec ["server_fnc_adjustLogisticsPool", 2, false];
+			[-250, "CUP_B_US_Army"] remoteExec ["server_fnc_adjustLogisticsPool", 2, false];
 			systemChat "Drone deployed!";
 		}
 		else
 		{
-			systemChat "NATO forcepool is under 500. Complete more sidetasks!";
+			systemChat "NATO forcepool is under 250. Complete more sidetasks!";
 		};
 	}
 	else
