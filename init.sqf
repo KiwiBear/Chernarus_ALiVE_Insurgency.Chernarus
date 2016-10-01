@@ -19,4 +19,5 @@ else
   _camera = "Camera" call BIS_fnc_getParamValue;
   if(_camera == 1) then {
     _null = [] execVM "scripts\introCamera.sqf";
+  };
 };
