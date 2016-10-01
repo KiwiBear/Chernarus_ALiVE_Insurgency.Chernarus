@@ -7,7 +7,7 @@ class Params
 		title = "Opfor Player Slots"; // Param name visible in the list
 		values[] = {0,3,5,7,9}; // Values; must be integers; has to have the same number of elements as 'texts'
 		texts[] = {"No Restrictions","3 BLUFOR to 1 OPFOR", "5 BLUFOR to 1 OPFOR", "7 BLUFOR to 1 OPFOR", "9 BLUFOR to 1 OPFOR"}; // Description of each selectable item
-		default = 0; // Default value; must be listed in 'values' array, otherwise 0 is used
+		default = 5; // Default value; must be listed in 'values' array, otherwise 0 is used
                // Default values that are not whole numbers do not work. Param will default to 0 (or 1 if defined)
 	};
 	class Daytime
@@ -25,6 +25,13 @@ class Params
 		texts[] = {"3","4","5","6","7"};
 		values[] = {3,4,5,6,7};
 		default = 5;
+	};
+	class Camera
+	{
+		title = "Intro Camera";
+		texts[] = {"No","Yes"};
+		values[] = {0,1};
+		default = 1;
 	};
 	class Debug
 	{

@@ -8,7 +8,7 @@ private["_caller", "_currentBLUFORForcepool"];
 
 _caller = _this select 1;
 
-if(typeOf _caller != "CUP_B_US_Officer") exitWith { hint "Only the commander has this option!" };
+if(typeOf _caller != "CUP_B_US_Officer") exitWith { systemChat "Only the commander has this option!" };
 
 if(typeOf _caller == "CUP_B_US_Officer") then
 {

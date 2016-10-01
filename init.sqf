@@ -16,5 +16,7 @@ else
   _null = [] execVM "scripts\briefing.sqf";
 
   // Intro camera script.
-	_null = [] execVM "scripts\introCamera.sqf";
+  _camera = "Camera" call BIS_fnc_getParamValue;
+  if(_camera == 1) then {
+    _null = [] execVM "scripts\introCamera.sqf";
 };
