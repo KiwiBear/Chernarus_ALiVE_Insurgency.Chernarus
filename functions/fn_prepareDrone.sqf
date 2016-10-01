@@ -21,7 +21,7 @@ if(typeOf _caller == "CUP_B_US_Officer") then
 	_currentBLUFORForcepool = missionNamespace getVariable ["GlobalForcePoolVariable",-99999];
 
 	if (_currentBLUFORForcepool != -99999) then {
-		if(_currentBLUFORForcepool > 500) then
+		if(_currentBLUFORForcepool > 250) then
 		{
 			remoteExec ["server_fnc_requestDrone", 2, false];
 			[-250, "CUP_B_US_Army"] remoteExec ["server_fnc_adjustLogisticsPool", 2, false];
